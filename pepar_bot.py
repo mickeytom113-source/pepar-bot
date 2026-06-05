@@ -38,7 +38,7 @@ async def main():
         now = datetime.now(IST)
         weekday = now.weekday()
         if weekday in [0, 1, 2, 3, 4, 5, 6]:
-            if now.hour == 10 and now.minute == 20:
+            if now.hour == 7 and now.minute == 0:
                 await send_and_delete()
                 await asyncio.sleep(60)
         await asyncio.sleep(30)
