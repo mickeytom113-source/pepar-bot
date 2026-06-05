@@ -31,7 +31,7 @@ async def send_and_delete():
     now = datetime.now(IST)
     weekday = now.weekday()  # 0=Monday, 2=Wednesday, 4=Friday
 
-    if weekday in [0, 2, 4]:  # Mon, Wed, Fri மட்டும்
+     if weekday in [0, 1, 2, 3, 4, 5, 6]: # Mon, Wed, Fri மட்டும்
         # Message அனுப்பு (Forward/Share block)
         msg = await bot.send_message(
             chat_id=CHANNEL_ID,
@@ -54,7 +54,7 @@ async def main():
     while True:
         now = datetime.now(IST)
         # 7:00 AM ஆகியிருக்கா check பண்ணு
-        if now.hour == 7 and now.minute == 0:
+        if now.hour == 10 and now.minute == 15:
             await send_and_delete()
             await asyncio.sleep(60)  # Double send தவிர்க்க
         await asyncio.sleep(30)  # ஒவ்வொரு 30 sec-கும் check
